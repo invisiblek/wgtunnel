@@ -514,6 +514,16 @@ fun ConfigScreen(
 								modifier = Modifier.width(IntrinsicSize.Min),
 							)
 						}
+						Row(modifier = Modifier.fillMaxWidth()) {
+							ConfigurationTextBox(
+								value = uiState.interfaceProxy.searchDomains,
+								onValueChange = { value -> viewModel.onSearchDomainsChanged(value) },
+								keyboardActions = keyboardActions,
+								label = stringResource(R.string.search_domains),
+								hint = stringResource(R.string.comma_separated_list),
+								modifier = Modifier.fillMaxWidth()
+							)
+						}
 						if (configType == ConfigType.AMNEZIA) {
 							ConfigurationTextBox(
 								value = uiState.interfaceProxy.junkPacketCount,
